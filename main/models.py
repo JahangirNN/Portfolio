@@ -119,12 +119,12 @@ class Blog(models.Model):
         verbose_name = 'Blog'
         ordering = ["timestamp"]
 
-    timestamp = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     author = models.CharField(max_length=200, blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to="blog")
     is_active = models.BooleanField(default=True)
 
