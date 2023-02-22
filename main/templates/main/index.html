@@ -68,7 +68,8 @@ Start Content
         <div class="col-md-auto">
           <div class="keySkillCol">
             <h4 class="smTitle pb-3">Key Skills</h4>
-            {% for sk in me.userprofile.skills.all %}
+            {% for sk in skill %}
+            {% comment %} {% for sk in me.userprofile.skills.all %} {% endcomment %}
             {% comment %} {% if sk.is_key_skill %} {% endcomment %}
             <p>Hi</p>
             <div class="keySkillCard">
@@ -87,7 +88,8 @@ Start Content
           <h4 class="smTitle pb-3">Coding Skills</h4>
           <div class="progressCol">
             <div class="progressCard">
-              {% for sk in me.userprofile.skills.all %}
+              {% comment %} {% for sk in me.userprofile.skills.all %} {% endcomment %}
+              {% for sk in skill %}
               {% if sk.is_key_skill %}
               <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
